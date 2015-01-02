@@ -1,0 +1,21 @@
+<h1>Contact</h1>
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h1 class="panel-title text-center">Contact Info</h1>
+  </div>
+  <div class="panel-body">
+    <dl>
+      <dt>Name:</dt>
+      <dd><%= @contact.name %></dd>
+      <dt>Email:</dt>
+      <dd><%= @contact.email %></dd>
+      <dt>Phone Number:</dt>
+      <dd><%= @contact.phone_number %></dd>
+      <dt>
+        <%= link_to 'Edit', edit_contact_path(@contact.id), class: 'btn btn-success' %>
+        <%= link_to 'Back', contacts_path, class: 'btn btn-success' %>
+      </dt>
+    </dl>
+    <%= link_to 'Delete', contact_path(@contact.id), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
