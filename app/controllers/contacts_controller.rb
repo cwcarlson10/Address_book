@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, execpt: [:index, :show]
   def index
     @contacts = Contact.all.order(:name)
   end
@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.create(contact_params)
+    @contact = current_user.contacts.create(contact_params)
     if @contact.save
       redirect_to contacts_path
     else
