@@ -1,6 +1,7 @@
-<%= simple_form_for @contact do |f| %>
+<%= simple_form_for @contact, :url => contact_path(@contact), :html => { :multipart => true }  do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :phone_number %>
+  <%= f.input :avatar %>
   <%= f.button :submit %>
 <% end %>

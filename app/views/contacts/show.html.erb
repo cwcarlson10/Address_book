@@ -4,6 +4,7 @@
     <h1 class="panel-title text-center">Contact Info</h1>
   </div>
   <div class="panel-body">
+  <%= image_tag @contact.avatar.url(:thumb) %>
     <dl>
       <dt>Name:</dt>
       <dd><%= @contact.name %></dd>
