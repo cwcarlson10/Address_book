@@ -1,4 +1,4 @@
-<%= simple_form_for @contact, :url => contact_path(@contact), :html => { :multipart => true }  do |f| %>
+<%= simple_form_for @contact, :url => contacts_path, :html => { :multipart => true }  do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :phone_number %>
